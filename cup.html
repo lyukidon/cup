@@ -3,33 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>물채우기</title>
-    <style>
-        #plate{
-            width: 400px;
-            height: 400px;
-            border: 2px solid grey;
-            border-radius: 15px;
-            margin:0 auto
-        }
-        #cup_space{
-            margin: 95px;
-        }
-        .cup{
-            border-left: 7px solid black;
-            border-right: 7px solid black;
-            width: 200px;
-            height: 50px;
-        }
-        .cup_bottom{
-            border-bottom: 7px solid black;
-        }
-    </style>
+    <link rel='stylesheet' href="./cup.css">
 </head>
 <body>
 <!--     버튼     -->
     <div>
-        <button id='cup_appear' type='button'>cup</button>
-        <button id='pour_water' type='button'>water</button>
+        <button id='cup_appear_btn' type='button'>cup</button>
+        <button id='pour_water_btn' type='button'>water</button>
     </div>
     
 <!--      컵      -->
@@ -41,36 +21,7 @@
             <div id='one'></div>
         </div>
     </div>
+    
+    <script type="text/javascript" src="./cup.js"></script>
 </body>
-<script>
-    let can_u_see_the_cup=false;
-
-    let plate_arr=[document.getElementById('one'),document.getElementById('two'),document.getElementById('three'),document.getElementById('four')];
-    
-    function making_cup(){
-        if(count===0){
-            for (let i=0;i<plate_arr.length;i++){
-                plate_arr[i].classList.add('cup');
-            }
-            document.getElementById('one').classList.add('cup_bottom');
-            can_u_see_the_cup=true;
-        }
-        else{
-            for (let i=0;i<plate_arr.length;i++){
-                plate_arr[i].classList.remove('cup');
-            }
-            document.getElementById('one').classList.remove('cup_bottom');
-            can_u_see_the_cup=true;
-        }
-    }
-    
-    document.getElementById('cup_appear').addEventListener('click',making_cup)
-    <!--
-//    물 채우기
-//    document.getElementById('pour_water').addEventListener('click',function(){
-//        let count=0;
-//        for (let )
-//    }) 
-        -->
-</script>
 </html>
